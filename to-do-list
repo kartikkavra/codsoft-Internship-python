@@ -1,1 +1,43 @@
+tasks = []
 
+print("Welcome to your To-Do List 📝")
+
+while True:
+    print("\n1 Add Task")
+    print("2 View Tasks")
+    print("3 Update Task")
+    print("4 Delete Task")
+    print("5 Exit")
+
+    choice = input("Choose an option: ")
+
+    if choice == "1":
+        task = input("Enter your task: ")
+        tasks.append(task)
+        print("Task added ✔")
+
+    elif choice == "2":
+        if not tasks:
+            print("No tasks yet.")
+        else:
+            for i, task in enumerate(tasks, 1):
+                print(i, task)
+
+    elif choice == "3":
+        num = int(input("Enter task number to update: "))
+        if 0 < num <= len(tasks):
+            tasks[num - 1] = input("Enter new task: ")
+            print("Task updated ✔")
+
+    elif choice == "4":
+        num = int(input("Enter task number to delete: "))
+        if 0 < num <= len(tasks):
+            tasks.pop(num - 1)
+            print("Task deleted 🗑")
+
+    elif choice == "5":
+        print("Goodbye! Stay productive 😊")
+        break
+
+    else:
+        print("Invalid choice, try again.")
