@@ -1,0 +1,24 @@
+def calculate(x, y, op):
+    if op == "+":
+        return x + y
+    if op == "-":
+        return x - y
+    if op == "*":
+        return x * y
+    if op == "/":
+        return "Cannot divide by zero" if y == 0 else x / y
+    return "Invalid operator"
+while True:
+    try:
+        x = float(input("Enter a number: "))
+        y = float(input("Enter another number: "))
+        op = input("Choose an operation (+ - * /): ")
+
+        result = calculate(x, y, op)
+        print("Result:", result)
+
+    except:
+        print("INVALID NUMBER")
+
+    if input("Try again? (y/n): ").lower() != "y":
+        break
